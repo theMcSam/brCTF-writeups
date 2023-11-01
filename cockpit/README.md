@@ -85,7 +85,7 @@ Anytime we get a shell through netcat we obtain a dumb shell. A dump shell has v
 Execute on target
 1. Step 1: `python3 -c "import pty;pty.spawn('/bin/bash')"` <br>
 2. Step 2: `export TERM=xterm-color` <br>
-3. Step 3: `CTRL+z`
+3. Step 3: `CTRL+z`<br>
 On host machine.
 4. Step 4: `stty raw -echo; fg` <br>
 5. Step 5: `reset` <br>
