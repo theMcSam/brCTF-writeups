@@ -20,7 +20,7 @@ In the second stage of out recon we checkout the application running on port `80
 We are greeted with a homepage.... interesting!
 ![Cockpit Homepage](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/homepage.png "a title")
 
-Next we try to find out what other pages are available on our target. We employ the servies of our directory bruteforcing tool (feroxbuster) or an other webfuzzer. 
+Next we try to find out what other pages are available on our target. We employ the servies of our directory bruteforcing tool (feroxbuster) or an other webfuzzer. <br>
 `feroxbuster -u http://10.0.160.145 -w /raft-medium-wordlists.txt`
 ```
 302      GET        0l        0w        0c http://10.0.160.145/ => http://10.0.160.145/auth/login?to=%2F
@@ -39,3 +39,7 @@ Next we try to find out what other pages are available on our target. We employ 
 301      GET        7l       11w      169c http://10.0.160.145/install => http://10.0.160.145/install/
 404      GET        0l        0w        0c http://10.0.160.145/austin101
 ```
+
+Something interesting the results below. We find a `/install` endpoint. <br>
+After visiting this page in the browser we realized that the system administrator setup cockpit application without fully installing. Nice! we can abuse this. <br>
+![Cockpit Install Page](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/install_the_software.png "a title")
