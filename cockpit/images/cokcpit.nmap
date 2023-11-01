@@ -1,8 +1,3 @@
-# Cockpit Machine from brCTF
-
-Information Gathering/ Reconnaissance
-As usual we fire up our favourite network mapper (nmap) and perform some basice recon.
-```
 nmap -sC -sV -oN cokcpit.nmap 10.0.160.145
 Nmap scan report for 10.0.160.145
 Host is up (0.24s latency).
@@ -14,4 +9,3 @@ PORT   STATE SERVICE VERSION
 |_Requested resource was /auth/login?to=%2F
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-```
