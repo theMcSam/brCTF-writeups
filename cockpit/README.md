@@ -58,6 +58,6 @@ From the steps provided on the [website](https://huntr.dev/bounties/f73eef49-004
 ![exploit code](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/exploit_code.png "a title")
 
 2. Head over to the assest page on cockpit and upload our malicious php script.
-![uploading php script](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/uploading_a_malicious_php_script_huntrdev.png "a title")
+![uploading php script](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/uploading_a_malicious_php_scipt_huntrdev.png "a title")
 ![uploading php script](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/uploading_php_script.png "a title")
 
