@@ -98,7 +98,7 @@ We first check our privileges.
 Doing a search on for dpkg on [gtfobins](https://gtfobins.github.io/gtfobins/dpkg/#sudo)
 ![gfobins](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/gtfobins_privesc.png)
 
-Now the way this is going to work is that we would build a malcious debian package and the we try installing the package which will run our malicious code embedded in the package.<br>
+Now the way this is going to work is that we would build a malcious debian package and then we try installing the package which will run our malicious code embedded in the package.<br>
 Steps to building malicious package.
 1. Install fpm: `sudo apt install ruby && sudo gem install fpm`
 2. Build package with fpm: ```TF=$(mktemp -d)
