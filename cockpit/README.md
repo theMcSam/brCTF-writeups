@@ -40,6 +40,7 @@ Next we try to find out what other pages are available on our target. We employ 
 404      GET        0l        0w        0c http://10.0.160.145/austin101
 ```
 
+## Exploitation <br>
 Something interesting the results above. We find a `/install` endpoint. <br>
 After visiting this page in the browser we realized that the system administrator setup cockpit application without fully installing. Nice! we can abuse this. <br> After visiting this endpoint cockpit will be installed and will setup an account with default logins.
 ![Cockpit Install Page](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/install_the_software.png "a title")
@@ -58,6 +59,22 @@ From the steps provided on the [website](https://huntr.dev/bounties/f73eef49-004
 ![exploit code](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/exploit_code.png "a title")
 
 2. Head over to the assest page on cockpit and upload our malicious php script.
-![uploading php script](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/uploading_a_malicious_php_scipt_huntrdev.png "a title")
+![uploading asset](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/asset_upload.png "a title")
 ![uploading php script](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/uploading_php_script.png "a title")
+
+3. Click on the options icons after fully uploding the asset and select `copy asset link` from the popup.
+![uploading php script](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/asset_options.png "a title")
+
+4. Open a new browser tab and paste the link there. Hold up! one last thing to do before execution. After pasting the link remove `/http:` from the url and now you can execute.
+
+Finally! we now have RCE on the target and we can get a shell on netcat.<br>
+We first start by running our netcat listener.
+`nc -lnvp 8989`
+![uploading php script](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/listening_on_netcat.png "a title")
+
+Now we can send execute command on our malicious php web page to get a shell on our listener.<br>
+![netcat payload shell](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/netcat_payload.png)
+
+Boom we get a connection on our listener.
+![netcat rev shell](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/recieved_nc_connection.png)
 
