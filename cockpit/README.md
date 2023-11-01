@@ -50,5 +50,6 @@ Using the default logins obtained on installation we can login to the cockpit ap
 Successful Login attempt and we a greeted with the application dashboard. From there we can do a little recon to find out the version of cockpit running. From the image below, `cockpit v2.4.0` is found to be running.
 ![Cockpit Dashboard Page](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/cockpit_version_info.png "a title")
 
-As a hacker google should be one of your cherised tools. Using the google search engine we can search for publicly available exploit for `cockpit v2.4.0`.
+As a hacker google should be one of your cherised tools. Using the google search engine we can search for publicly available exploit for `cockpit v2.4.0`. <br> We find a publicly disclose exploitation process [here](https://huntr.dev/bounties/f73eef49-004f-4b3b-9717-90525e65ba61/).
 ![Public Expliot](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/google_vuln.png "a title")
+
