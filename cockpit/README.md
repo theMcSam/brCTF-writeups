@@ -40,6 +40,9 @@ Next we try to find out what other pages are available on our target. We employ 
 404      GET        0l        0w        0c http://10.0.160.145/austin101
 ```
 
-Something interesting the results below. We find a `/install` endpoint. <br>
-After visiting this page in the browser we realized that the system administrator setup cockpit application without fully installing. Nice! we can abuse this. <br>
+Something interesting the results above. We find a `/install` endpoint. <br>
+After visiting this page in the browser we realized that the system administrator setup cockpit application without fully installing. Nice! we can abuse this. <br> After visiting this endpoint cockpit will be installed and will setup an account with default logins.
 ![Cockpit Install Page](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/install_the_software.png "a title")
+
+Using the default logins obtained on installation we can login to the cockpit application.
+![Cockpit Login Page](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/login_with_default_creds.png "a title")
