@@ -18,16 +18,16 @@ Service detection performed. Please report any incorrect results at https://nmap
 ```
 
 In the second phase of our reconnaissance, we proceed to examine the application hosted on port 80 by accessing it through our web browser. To our surprise, we are welcomed with a login page. Quite intriguing!
-![GLPI Login](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/glpi-login.png "a title")
+![GLPI Login](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/glpi-login.png "a title")
 
 After a brief research on google we discovered default credentials for GLPI which we can try on out target.
-![google glpi logins](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/glpi-default-creds.png "a title")
+![google glpi logins](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/glpi-default-creds.png "a title")
 
 We now attempt to login to GLPI and viola!!<br>
 From there we move on with out recon and attempt to find the version of GLPI running. Hopefully we can find publicly available exploits.
-![glpi logged in](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/checking-glpi-version.png "a title")
+![glpi logged in](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/checking-glpi-version.png "a title")
 The version of GLPI can be seen in the photo below.
-![glpi version enum](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/glpi-version.png "a title")
+![glpi version enum](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/glpi-version.png "a title")
 
 Now that we know the version running, we can google it to find avaiable exploits and shortly after, we find one on github from [Orange-CyberDefense](https://github.com/Orange-Cyberdefense/CVE-repository/blob/master/PoCs/POC_2022-35914.sh)
 
