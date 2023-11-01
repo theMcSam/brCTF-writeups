@@ -44,5 +44,5 @@ Firstly, we must make sure we are listening for incoming connections. <br>
 Secondly, we prepare our exploit code to obtain a reverse shell.<br>
 ![preparing payload](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/modify-exploit.png "a title")
 
-We can now execute the command and boom!! we get a connection on our listener. <br>
-![conn reccv](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/nc-connectio-received.png "a title")
+We execute the command and boom!! we get a connection on our listener. <br>
+![conn reccv](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/nc-connection-received.png "a title")
