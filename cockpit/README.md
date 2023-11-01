@@ -46,3 +46,9 @@ After visiting this page in the browser we realized that the system administrato
 
 Using the default logins obtained on installation we can login to the cockpit application.
 ![Cockpit Login Page](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/login_with_default_creds.png "a title")
+
+Successful Login attempt and we a greeted with the application dashboard. From there we can do a little recon to find out the version of cockpit running. From the image below, `cockpit v2.4.0` is found to be running.
+![Cockpit Dashboard Page](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/cockpit_version_info.png "a title")
+
+As a hacker google should be one of your cherised tools. Using the google search engine we can search for publicly available exploit for `cockpit v2.4.0`.
+![Public Expliot](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/google_vuln.png "a title")
