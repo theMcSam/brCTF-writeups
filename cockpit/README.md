@@ -116,5 +116,6 @@ NB: Make sure you are in a writable directory like `/tmp`. <br>
 ![python transfer download](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/downloading_mal_package_from_attacker_server.png) 
 
 Now we can execute and get root access.<br>
-![iamroot](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/exec_command_priv_root.png)
+![execute code](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/exec_command_priv_root.png)
+We are now root!!! :smiley:
 ![iamroot](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/i_am_root.png)
