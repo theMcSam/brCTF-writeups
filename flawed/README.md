@@ -46,3 +46,25 @@ Secondly, we prepare our exploit code to obtain a reverse shell.<br>
 
 We execute the command and boom!! we get a connection on our listener. <br>
 ![conn reccv](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/nc-connection-received.png "a title")
+
+## Post Exploitation
+As usual we need to stabilize out shell and the steps are as follows:<br>
+#### Shell stabilization
+Execute on target
+1. Step 1: `python3 -c "import pty;pty.spawn('/bin/bash')"` <br>
+2. Step 2: `export TERM=xterm-color` <br>
+3. Step 3: `CTRL+z`<br>
+On host machine.
+4. Step 4: `stty raw -echo; fg` <br>
+5. Step 5: `reset` <br>
+
+Let's continue from when we left off. Let's check the sudo privileges the `ETSCTF` user has on the box.
+![sudo privs](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/check-sudo-privs.png "a title")
+
+Hmmmm, interesting..... Can we abuse this? <br>
+After doing some research we find out that: <br>
+Supervisord is a `process control system` for Unix-like operating systems. It allows you to manage and monitor multiple processes, ensuring that they run continuously and `automatically restarting` them if they fail. Supervisord is often used to manage services, daemons, and other long-running processes.
+
+Supervisord can run commands in it's configuration file. Now you get the hint from here? So what we'll have to do is to craft a configuration file for supervisord which contains commands to execute.<br>
+We will take advantage of this to spawn a shell.
+![sudo privs](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/spawn-nc-shell-priv.png "a title")
