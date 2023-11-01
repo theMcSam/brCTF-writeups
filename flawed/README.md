@@ -32,5 +32,17 @@ The version of GLPI can be seen in the photo below.
 
 Now that we know the version running, we can google it to find avaiable exploits and shortly after, we find one on github from [Orange-CyberDefense](https://github.com/Orange-Cyberdefense/CVE-repository/blob/master/PoCs/POC_2022-35914.sh)
 
-**CURL Command to exploit the vulnerability**
+**CURL Command to exploit the vulnerability** <br>
 ```curl -s -d 'sid=foo&hhook=exec&text=[command]' -b 'sid=foo' http://[target-ip]/vendor/htmlawed/htmlawed/htmLawedTest.php |egrep '\&nbsp; \[[0-9]+\] =\&gt;'| sed -E 's/\&nbsp; \[[0-9]+\] =\&gt; (.*)<br \/>/\1/'```
+
+Replace [command] and [target] with the command you  want to execute on the target and the IP address of the target respecfully.
+
+We modify the exploit to get a reverse shell on out netcat listener.<br>
+Firstly, we must make sure we are listening for incoming connections. <br>
+![netcat listening](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/start-netcat-listener.png "a title")
+
+Secondly, we prepare our exploit code to obtain a reverse shell.<br>
+![preparing payload](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/modify-exploit.png "a title")
+
+We can now execute the command and boom!! we get a connection on our listener. <br>
+![conn reccv](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/nc-connectio-received.png "a title")
