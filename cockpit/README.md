@@ -1,6 +1,6 @@
 # Cockpit Machine from brCTF
 
-## Information Gathering/Reconnaissance <br>
+## Information Gathering/Reconnaissance
 As usual we fire up our favourite network mapper (nmap) and perform some basic recon. We can see that we have only port 80 (http) open.
 `nmap -sC -sV -oN cokcpit.nmap 10.0.160.145`
 ```
@@ -40,7 +40,7 @@ Next we try to find out what other pages are available on our target. We employ 
 404      GET        0l        0w        0c http://10.0.160.145/austin101
 ```
 
-## Exploitation <br>
+## Exploitation
 Something interesting the results above. We find a `/install` endpoint. <br>
 After visiting this page in the browser we realized that the system administrator setup cockpit application without fully installing. Nice! we can abuse this. <br> After visiting this endpoint cockpit will be installed and will setup an account with default logins.
 ![Cockpit Install Page](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/install_the_software.png "a title")
@@ -77,4 +77,16 @@ Now we can send execute command on our malicious php web page to get a shell on 
 
 Boom we get a connection on our listener.
 ![netcat rev shell](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/recieved_nc_connection.png)
+
+## Post Exploitation
+Anytime we get a shell through netcat we obtain a dumb shell. A dump shell has very little functionality and therefore we need a stable shell. Shell Stabilization prevents you from killing your reverse shell and adds proper shell functionalities.
+#### Shell stabilization
+Execute on target
+1. Step 1: `python3 -c "import pty;pty.spawn('/bin/bash')"` <br>
+2. Step 2: `export TERM=xterm-color` <br>
+3. Step 3: `CTRL+z` <br>
+On host machine.
+4. Step 4: `stty raw -echo; fg` <br>
+5. Step 5: `reset` <br>
+
 
