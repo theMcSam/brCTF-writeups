@@ -85,4 +85,4 @@ Right after downloading the file we transfer it the the `/var/tmp` direcrory. Th
 ![copy to var-tmp](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/copy-payload-to-tmp.png "a title")
 
 Now we can run our command with sudo to gain root privileges and viola!! we are root. :smiley: <br>
-![copy to var-tmp](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/spawn-nc-shell-priv.png "a title")
+![copy to var-tmp](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/run-pe-vector.png "a title")
