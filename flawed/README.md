@@ -20,12 +20,12 @@ Service detection performed. Please report any incorrect results at https://nmap
 In the second phase of our reconnaissance, we proceed to examine the application hosted on port 80 by accessing it through our web browser. To our surprise, we are welcomed with a login page. Quite intriguing!
 ![GLPI Login](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/glpi-login.png "a title")
 
-After a brief research on google we discovered default credentials for GLPI which we can try on out target.
+After a brief research on google we discovered default credentials for GLPI which we can try on our target.
 ![google glpi logins](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/glpi-default-creds.png "a title")
 
 ### Exploitation
 We now attempt to login to GLPI and viola!!<br>
-From there we move on with out recon and attempt to find the version of GLPI running. Hopefully we can find publicly available exploits.
+From there we move on with our recon and attempt to find the version of GLPI running. Hopefully we can find publicly available exploits.
 ![glpi logged in](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/checking-glpi-version.png "a title")
 The version of GLPI can be seen in the photo below.
 ![glpi version enum](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/glpi-version.png "a title")
@@ -37,7 +37,7 @@ Now that we know the version running, we can google it to find avaiable exploits
 
 Replace [command] and [target] with the command you  want to execute on the target and the IP address of the target respecfully.
 
-We modify the exploit to get a reverse shell on out netcat listener.<br>
+We modify the exploit to get a reverse shell on our netcat listener.<br>
 Firstly, we must make sure we are listening for incoming connections. <br>
 ![netcat listening](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/start-netcat-listener.png "a title")
 
@@ -48,7 +48,7 @@ We execute the command and boom!! we get a connection on our listener. <br>
 ![conn reccv](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/nc-connection-received.png "a title")
 
 ## Post Exploitation
-As usual we need to stabilize out shell and the steps are as follows:<br>
+As usual we need to stabilize our shell and the steps are as follows:<br>
 #### Shell stabilization
 Execute on target
 1. Step 1: `python3 -c "import pty;pty.spawn('/bin/bash')"` <br>
@@ -72,7 +72,7 @@ We will take advantage of this to spawn a shell.<br>
 Before anything else let's start our listener<br>
 ![other nc listener](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/other-nc-listener.png "a title")
 
-Now we have to transfer our malicious configuration to the target. To make that possible we must start our local python http server in the directory containing out malicious configuration. <br>
+Now we have to transfer our malicious configuration to the target. To make that possible we must start our local python http server in the directory containing our malicious configuration. <br>
 `python3 -m http.server 8000` <br>
 ![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/start-python-http-server.png "a title")
 

@@ -16,7 +16,7 @@ PORT   STATE SERVICE VERSION
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 ```
 
-In the second stage of out recon we checkout the application running on port `80` from our browser. <br>
+In the second stage of our recon we checkout the application running on port `80` from our browser. <br>
 We are greeted with a homepage.... interesting!
 ![Cockpit Homepage](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/homepage.png "a title")
 
@@ -55,7 +55,7 @@ As a hacker google should be one of your cherished tools. Using the google searc
 ![Public Exploit](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/google_vuln.png "a title")
 
 From the steps provided on the [website](https://huntr.dev/bounties/f73eef49-004f-4b3b-9717-90525e65ba61/).
-1. We must first craft out malicious php script.
+1. We must first craft our malicious php script.
 ![exploit code](https://github.com/theMcSam/brCTF-writeups/blob/main/cockpit/images/exploit_code.png "a title")
 
 2. Head over to the assest page on cockpit and upload our malicious php script.
