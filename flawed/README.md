@@ -84,5 +84,8 @@ NB: make sure you have write privileges to the current diretory you are in. You 
 Right after downloading the file we transfer it the the `/var/tmp` direcrory. This is necessary because it is the only folder that we can execute configuration files from.<br>
 ![copy to var-tmp](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/copy-payload-to-tmp.png "a title")
 
-Now we can run our command with sudo to gain root privileges and viola!! we are root. :smiley: <br>
-![copy to var-tmp](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/run-pe-vector.png "a title")
+Now we can run our command with sudo to gain root privileges.<br>
+![run pe vector](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/run-pe-vector.png "a title")
+
+Viola!! we are root. :smiley: 
+![i am root](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/iamroot_and_got_conn.png "a title")
