@@ -87,5 +87,5 @@ Right after downloading the file we transfer it the the `/var/tmp` direcrory. Th
 Now we can run our command with sudo to gain root privileges.<br>
 ![run pe vector](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/run-pe-vector.png "a title")
 
-Viola!! we are root. :smiley: 
+Viola!! we are root. :smiley: <br>
 ![i am root](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/flawed/images/iamroot_and_got_conn.png "a title")
