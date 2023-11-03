@@ -1,7 +1,7 @@
 # Write Up on syswatch machine
 
 ## Information Gathering And Enumeration
-Let's us first start of by firing up our network mapper (nmap) to discover open ports and running services on our target. <br>
+Let's us first start off by firing up our network mapper (nmap) to discover open ports and running services on our target. <br>
 `nmap -sC -sV -oN syswatch.nmap 10.0.160.159`
 ```
 Nmap scan report for 10.0.160.159
