@@ -55,7 +55,7 @@ After editing we can click on `update` to save those settings. <br>
 We now head back to the `host` tab to run this script on the target server. We simply do that by clicking on the host and clicking on the script we want to run. Hold up!!! before you run the script make sure you have your netcat listening for incoming connections. <br>
 ![netcat listener](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/listening-on-nc.png)
 
-Finally, we can run our malicous script(traceroute) to get a shell on our listener.<br>
+Finally, we can run our malicious script(traceroute) to get a shell on our listener.<br>
 ![run mal script](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/run-modified-scripts.png)
 
 Interesting.... we have a shell on the target. <br>
@@ -81,7 +81,7 @@ First thing i did was to run `sudo -l` but no luck. Next i decided to check if t
 
 We transfer our trusted friend `pspy64` onto the target. <br>
 
-Brief explanaation of `pspy64`: it is a program that allows us to snoop on linux processes to find sensitve information, processes running with elevated privileges amongst many others. We would have to run this on the target to get the required information. <br>
+Brief explanation of `pspy64`: it is a program that allows us to snoop on linux processes to find sensitive information, processes running with elevated privileges amongst many others. We would have to run this on the target to get the required information. <br>
 
 We start off by starting our python http server in the directory that houses the `pspy64` binary. <br>
 ![python http server](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/serving-pspy64.png)
