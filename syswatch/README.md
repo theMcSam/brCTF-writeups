@@ -34,6 +34,8 @@ We can now test these credentials to see if they work. We enter the credentials 
 
 After spending sometime reading about zabbix RCE and browsing through the application i found a hosts tab which allows us to run some defaults scripts on hosts in `zabbix`.<br>
 ![checking zabbix hosts](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/checking-hosts-zabbix.png) <br>
+
+
 And these are the various scripts we can run on the target. <br>
 ![zabbix host tab](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/zabbix-host-scripts.png)
 
