@@ -78,7 +78,9 @@ On host machine.
 
 ## Privilege Escalation
 First thing i did was to run `sudo -l` but no luck. Next i decided to check if there's a process running with elevated privileges that can be abused. <br> 
+
 We transfer our trusted friend `pspy64` onto the target. <br>
+
 Brief explanaation of `pspy64`: it is a program that allows us to snoop on linux processes to find sensitve information, processes running with elevated privileges amongst many others. We would have to run this on the target to get the required information. <br>
 
 We start off by starting our python http server in the directory that houses the `pspy64` binary. <br>
