@@ -33,8 +33,8 @@ We are greeted with a login page and as usual we test default credentials to see
 We can now test these credentials to see if they work. We enter the credentials and just like that we're are logged in to `zabbix`.<br>
 
 After spending sometime reading about zabbix RCE and browsing through the application i found a hosts tab which allows us to run some defaults scripts on hosts in `zabbix`.<br>
-![checking zabbix hosts](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/checking-hosts-zabbix.png)
-And these are the various scripts we can run on the target.
+![checking zabbix hosts](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/checking-hosts-zabbix.png) <br>
+And these are the various scripts we can run on the target. <br>
 ![zabbix host tab](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/zabbix-host-scripts.png)
 
 After further probing i found out that these scripts that are run on the zabbix host can be we edited (because we are the admininstrator). Let's first start off by viewing the content of these default scripts.<br>
