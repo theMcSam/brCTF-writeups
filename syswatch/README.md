@@ -1,7 +1,7 @@
 # Write Up on syswatch machine
 
 ## Information Gathering And Enumeration
-Let's us first start of by firing up our network mapper (nmap) to discover open ports and running services on our target.
+Let's us first start of by firing up our network mapper (nmap) to discover open ports and running services on our target. <br>
 `nmap -sC -sV -oN syswatch.nmap 10.0.160.159`
 ```
 Nmap scan report for 10.0.160.159
@@ -23,10 +23,10 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 From the above scan we see that there are two services running. I browsed through the service running on port `80` but found nothing interesting. Looking at port `5000` nmap tells us that the application `zabbix` is running on that port.<br>
 
-Let's take a look at it in our browser.
+Let's take a look at it in our browser. <br>
 ![zabbix homepage](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/zabbix-port-5000-browser.png)
 
-We are greeted with a login page and as usual we test default credentials to see if they work. After some googling we come across the default credentials for `zabbix`.
+We are greeted with a login page and as usual we test default credentials to see if they work. After some googling we come across the default credentials for `zabbix`. <br>
 ![zabbix default creds](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/default-logins-zabbix-google.png)
 
 ## Exploitation
