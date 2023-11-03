@@ -39,7 +39,7 @@ After spending sometime reading about zabbix RCE and browsing through the applic
 And these are the various scripts we can run on the target. <br>
 ![zabbix host tab](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/zabbix-host-scripts.png)
 
-After further probing i found out that these scripts that are run on the zabbix host can be we edited (because we are the admininstrator). Let's first start off by viewing the content of these default scripts.<br>
+After further probing i found out that these scripts that are run on the zabbix host can edited (because we are the admininstrator). Let's first start off by viewing the content of these default scripts.<br>
 ![zabbix original scripts](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/see-scripts.png)
 
 After clicking on the script name we are greeted with a form which allows us to change the content of the script. For this demostration we will edit the `traceroute` script. <br>
