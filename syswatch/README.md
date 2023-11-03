@@ -104,7 +104,7 @@ Wow! we have write permissions. Let's run off to create a malicious playbook. <b
 The we download the playbook onto out target. At this point, i assume you already have your python http server setup. <br>
 ![download mal playbook](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/download-mal-playbook.png)
 
-After this we quickly setup our netcat listener. Note that in while crafting the malicious playbook we entered a command that will spawn a shell and connect to our machine on port `9090` using netcat. <br>
+After this, we quickly setup our netcat listener. Note that in while crafting the malicious playbook we entered a command that will spawn a shell and connect to our machine on port `9090` using netcat. <br>
 Now let's listen on port 9090. `rlwrap nc -lnvp 9090`
 ![other nc](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/other-nc-listening.png)
 
