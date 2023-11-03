@@ -29,12 +29,12 @@ Let's take a look at it in our browser. <br>
 We are greeted with a login page and as usual we test default credentials to see if they work. After some googling we come across the default credentials for `zabbix`. <br>
 ![zabbix default creds](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/default-logins-zabbix-google.png)
 
+
 ## Exploitation
 We can now test these credentials to see if they work. We enter the credentials and just like that we're are logged in to `zabbix`.<br>
 
 After spending sometime reading about zabbix RCE and browsing through the application i found a hosts tab which allows us to run some defaults scripts on hosts in `zabbix`.<br>
 ![checking zabbix hosts](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/checking-hosts-zabbix.png) <br>
-
 
 And these are the various scripts we can run on the target. <br>
 ![zabbix host tab](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/zabbix-host-scripts.png)
@@ -62,6 +62,7 @@ Interesting.... we have a shell on the target. <br>
 ![got shell](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/connection-recieved-on-nc.png)
 NB: The script run time on `zabbix` times out after some minutes. If this happens just re-run the traceroute poisoned script.
 
+
 ## Post Exploitation
 Anytime we get a shell through netcat we obtain a dumb shell. A dump shell has very little functionality and therefore we need a stable shell. Shell Stabilization prevents you from killing your reverse shell and adds proper shell functionalities.
 
@@ -73,6 +74,7 @@ Execute on target
 On host machine.
 4. Step 4: `stty raw -echo; fg` <br>
 5. Step 5: `reset` <br>
+
 
 ## Privilege Escalation
 First thing i did was to run `sudo -l` but no luck. Next i decided to check if there's a process running with elevated privileges that can be abused. <br> 
