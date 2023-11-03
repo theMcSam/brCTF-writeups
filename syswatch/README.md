@@ -111,9 +111,9 @@ Now let's listen on port 9090. `rlwrap nc -lnvp 9090`
 We can now go back to our target and over write the original `playbook.yml`.<br>
 ![overwrite playbook](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/over-write-original-playbook.png)
 
-Now, we patiently wait for a connection on `9090`. :rofl:
-After a while the cron runs and we receive a connection.
+Now, we patiently wait for a connection on `9090`. :rofl: <br>
+After a while the cron runs and we receive a connection.<br>
 ![conn recv](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/root-shell-cron-job-execs.png)
 
-We are now root!! :smiley:
+We are now root!! :smiley:<br>
 ![i am root](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/i-am-root.png)
