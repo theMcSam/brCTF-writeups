@@ -21,3 +21,10 @@ Service detection performed. Please report any incorrect results at https://nmap
 # Nmap done at Fri Nov  3 10:20:45 2023 -- 1 IP address (1 host up) scanned in 24.85 seconds
 ```
 
+From the above scan we see that there are two services running. I browsed through the service running on port `80` but found nothing interesting. Looking at port `5000` nmap tells us that the application `zabbix` is running on that port.<br>
+
+Let's take a look at it in our browser.
+![zabbix homepage](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/zabbix-port-5000-browser.png)
+
+We are greeted with a login page and as usual we test default credentials to see if they work. After some googling we come across the default credentials for `zabbix`.
+![zabbix default creds](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/default-logins-zabbix-google.png)
