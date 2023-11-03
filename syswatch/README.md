@@ -59,7 +59,7 @@ Finally, we can run our malicous script(traceroute) to get a shell on our listen
 ![run mal script](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/run-modified-scripts.png)
 
 Interesting.... we have a shell on the target. <br>
-![got shell](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/connection-recieved-on-nc.png)
+![got shell](https://raw.githubusercontent.com/theMcSam/brCTF-writeups/main/syswatch/images/connection-recieved-on-nc.png) <br>
 NB: The script run time on `zabbix` times out after some minutes. If this happens just re-run the traceroute poisoned script.
 
 
